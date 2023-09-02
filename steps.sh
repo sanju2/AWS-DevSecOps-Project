@@ -1,5 +1,5 @@
 # python venvc create
-py -3 -m venv venv
+python -m venv venv
 
 # flask install locally
 pip install Flask
