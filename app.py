@@ -5,6 +5,5 @@ app = Flask(__name__)
 def hello_geek():
     return '<h1>DevSecOps Project</h2>'
 
-
 if __name__ == "__main__":
     app.run(debug=True)
