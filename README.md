@@ -2,4 +2,4 @@
 AWS DevSecOps Project
 
 ### Architectural Diagram
-![Diagram](Architectural-Diagram.png)
+![Diagram](Architectural-Diagram-St2_Animated.gif)
