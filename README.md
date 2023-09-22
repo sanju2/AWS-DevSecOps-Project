@@ -50,10 +50,13 @@ git push <codecommit repo URI>
 - Create pipeline
 - Add new stage and connect the snyk account to check the vulnerabilities.
 
-  # Step 5
-  - Create ECS cluster
-  - Create task definition (add port 5000 because our app is running in this port also add tag:latest after the image URI)
- -	Create service (make sure the security group has port 5000 added)
--	Once service has been created we can see the task running. Go to networking from task tab and copy the Public IP and add :5000 in the end. And we can see our app running
+# Step 5
+- Create ECS cluster
+- Create task definition (add port 5000 because our app is running in this port also add tag:latest after the image URI)
+- Create service (make sure the security group has port 5000 added)
+- Once service has been created we can see the task running. Go to networking from task tab and copy the Public IP and add :5000 in the end. And we can see our app running.
 
+# Step 6
+- Deployment
+    
 
