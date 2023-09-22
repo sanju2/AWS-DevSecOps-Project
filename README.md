@@ -58,5 +58,4 @@ git push <codecommit repo URI>
 
 # Step 6
 - Deployment
-    
-
+Add new stage in pipeline called deployment and add the ECS cluster in that. 
