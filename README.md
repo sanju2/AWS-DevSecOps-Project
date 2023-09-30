@@ -14,8 +14,18 @@ AWS DevSecOps Project
 # Services Covered
 
 - AWS CodeCommit
+- AWS CodeBuild, CodePipeline
+- AWS ECR (Elastic Container Registry)
+- AWS ECS (Elastic Container Service)
+
+
+# Step 1
+
+- Create codecommit repository
+- Clone the project repository from github (Open cloudshell and clone the repo using below command)
 
 To create code commit repository follow the below steps;
+
 
 ![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/0d0c9fbe-3fad-4ae4-a076-69168dbb44f8)
 
@@ -99,30 +109,6 @@ git push https://git-codecommit.us-east-2.amazonaws.com/v1/repos/AWS-DevSecOps-P
 ![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/a5a84031-8193-4652-8427-895aa1ca4522)
 
 
-
-- AWS CodeBuild, CodePipeline
-- AWS ECR (Elastic Container Registry)
-- AWS ECS (Elastic Container Service)
-
-# Step 1
-
-- Create codecommit repository
-- Clone the project repository from github (Open cloudshell and clone the repo using below command)
-
-```
-git clone https://github.com/sanju2/AWS-DevSecOps-Project.git
-```
-- Mirror the repo
-
-```
-git clone --mirror https://github.com/sanju2/AWS-DevSecOps-Project.git AWS-DevSecOps-Project
-```
-
-- Push the repo to codecommit repository (Need to create HTTPS Git credentials for AWS CodeCommit from IAM user)
-
-```
-git push <codecommit repo URI>
-```
 
 # Step 2
 
