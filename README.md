@@ -202,6 +202,34 @@ Add the below policy in the IAM role
 - Create pipeline
 - Add new stage and connect the snyk account to check the vulnerabilities.
 
+To create codepipeline follow the below steps;
+ 
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/7ea19252-9058-495a-8573-33cb9b03d3ab)
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/bd9415f1-d2cf-4816-9347-f12168c4355f)
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/d353dfd0-52be-4f48-b72c-c0896885715d)
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/e41c1bc1-bd5c-411d-b131-aa69aa1f76ce)
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/c630dc9f-a37d-494b-a68f-4d632ca24f53)
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/f8890fe3-40d9-436f-ad1c-f341b8375ea0)
+
+**Skip deploy stage and create pipeline**
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/35be58e9-64c6-4882-8ae1-6873b437d5ca)
+
+**Wait for some time and we can see the pipeline success**
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/0ba59199-d698-45de-81b9-6ce4fe6baacc)
+
+**If you are facing any issue while creating pipeline then add the ECR permission we have added for codebuild to the code pipeline role as well.**
+
+
+
+
 # Step 5
 - Create ECS cluster
 - Create task definition (add port 5000 because our app is running in this port also add tag:latest after the image URI)
