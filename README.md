@@ -114,10 +114,90 @@ git push https://git-codecommit.us-east-2.amazonaws.com/v1/repos/AWS-DevSecOps-P
 
 - Create ECR repository
 
+To create ECR repository follow the below steps;
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/c91a7664-e106-478a-8a03-7b17f221d4b3)
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/7102175b-c560-42e3-bb12-0a58eddd9907)
+
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/91fed4f3-2608-4b35-a808-222b1a417e01)
+
+
+
 # Step 3 
 - Create Build project
 - Add ECR permission for the IAM role create for build project.
 
+Go to codecommit console page and under codebuild click on build projects
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/ed53e254-975b-4853-a23e-f32f5f9f0c50)
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/1f92856d-2ffd-43ed-aa6e-cce2ad8c5756)
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/0b325bb8-5204-4749-a6a6-4544e11a8aad)
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/20dd0a65-3540-4778-9906-05970865e46c)
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/29a737b8-cf89-4403-9d81-be16cda28689)
+
+**Expand additional configuration to add the environment variables and add the below variables.**
+(Make sure add the region and ECR repo name as per your configuration.)
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/5e020e3b-3915-425a-8899-dfedef4bf68a)
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/9d000b25-2e80-4414-905a-00418a24ebae)
+
+- Once the codebuild has been created click on start build.
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/9d98c423-e899-4d45-9997-6e9cf5705d7a)
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/278224c5-be0f-4e7d-ad24-e678beebf0d9)
+
+**We can see the build got failed. The error is because of the role permission. We need to manually add the ECR permission for the IAM role. To do that go to codebuild IAM role and add the ECR permission.**
+
+(Click on the service role and it will open the IAM role interface.)
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/b0be4531-8d52-4dbd-955c-46b6b29bf251)
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/d490464e-265c-48ee-88ae-daa655d17dc0)
+
+Add the below policy in the IAM role 
+```
+{
+    "Statement": [
+      {
+        "Action": [
+          "ecr:BatchCheckLayerAvailability",
+          "ecr:CompleteLayerUpload",
+          "ecr:GetAuthorizationToken",
+          "ecr:InitiateLayerUpload",
+          "ecr:PutImage",
+          "ecr:UploadLayerPart"
+        ],
+        "Resource": "*",
+        "Effect": "Allow"
+      }
+    ],
+    "Version": "2012-10-17"
+  }
+
+```
+-	Give any role name and click on create policy
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/17c5d6a9-b40a-455d-8fb3-043898df0694)
+
+**Once you add inline policy then try build again. This time we can see it is success**
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/09194f3f-15b8-41de-b791-c1b39c062b8e)
+
+**If you are still getting the error then check the IAM role and make sure you have the below permissions attached**
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/6ee296a7-a828-4f55-a829-017e4f9f1794)
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/96e31bb1-38b3-4b5f-bde3-2b1123e29561)
+
+**Now we can see the build process is success. If we go to ECR repository we can see the image uploaded.**
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/96d056c8-076d-4d2f-b8b6-e61093424d6d)
+
+ 
 # Step 4
 - Create pipeline
 - Add new stage and connect the snyk account to check the vulnerabilities.
