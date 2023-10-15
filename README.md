@@ -200,6 +200,36 @@ Add the below policy in the IAM role
  
 # Step 4
 - Create pipeline
+
+To create codepipeline follow the below steps;
+ 
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/7ea19252-9058-495a-8573-33cb9b03d3ab)
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/bd9415f1-d2cf-4816-9347-f12168c4355f)
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/d353dfd0-52be-4f48-b72c-c0896885715d)
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/e41c1bc1-bd5c-411d-b131-aa69aa1f76ce)
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/c630dc9f-a37d-494b-a68f-4d632ca24f53)
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/f8890fe3-40d9-436f-ad1c-f341b8375ea0)
+
+**Skip deploy stage and create pipeline**
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/35be58e9-64c6-4882-8ae1-6873b437d5ca)
+
+**Wait for some time and we can see the pipeline success**
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/0ba59199-d698-45de-81b9-6ce4fe6baacc)
+
+**If you are facing any issue while creating pipeline then add the ECR permission we have added for codebuild to the code pipeline role as well.**
+
+# Step 5
+
+### Add Snyk Stage
+
 - Add new stage and connect the snyk account to check the vulnerabilities.
 - If you don’t have a Snyk account then click the link below and sign up.
 ```
@@ -232,42 +262,75 @@ Once you add the stage click on Save
 
 
 
-
-
-To create codepipeline follow the below steps;
- 
-
-![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/7ea19252-9058-495a-8573-33cb9b03d3ab)
-
-![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/bd9415f1-d2cf-4816-9347-f12168c4355f)
-
-![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/d353dfd0-52be-4f48-b72c-c0896885715d)
-
-![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/e41c1bc1-bd5c-411d-b131-aa69aa1f76ce)
-
-![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/c630dc9f-a37d-494b-a68f-4d632ca24f53)
-
-![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/f8890fe3-40d9-436f-ad1c-f341b8375ea0)
-
-**Skip deploy stage and create pipeline**
-
-![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/35be58e9-64c6-4882-8ae1-6873b437d5ca)
-
-**Wait for some time and we can see the pipeline success**
-
-![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/0ba59199-d698-45de-81b9-6ce4fe6baacc)
-
-**If you are facing any issue while creating pipeline then add the ECR permission we have added for codebuild to the code pipeline role as well.**
-
-
-
-
 # Step 5
 - Create ECS cluster
-- Create task definition (add port 5000 because our app is running in this port also add tag:latest after the image URI)
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/c4c79aa1-261c-4297-b361-2fd1b5b90d4d)
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/3f43af62-fd53-42a9-aea9-ba08d1c0462f)
+
+Creating cluster may take sometime.
+
+- Create task definition (add port 5000 because our app is running in this port also add tag:latest after the image URI) (Also make sure under container name give the same name as ECR name)
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/5da3d510-0f3e-4d09-ac70-aacf7dcaa266)
+
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/05768710-a12a-48a9-bf8b-ce7f245e6822)
+
+Under Image URL add the ECR latest image (make sure to add :latest in the end)
+
+Leave everuthing default and click on save.
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/da9e9a69-ff1e-420c-b4fd-8b6ffa743f3a)
+
+
 - Create service (make sure the security group has port 5000 added)
+To create service click on the Deploy dropdown and click on create service.
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/44a4a062-befb-4bf8-baf9-d23ef487f9fc)
+
+Select the cluster we created 
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/980a19ba-4604-49a3-8d72-6c7070450266)
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/791acf38-2f27-4c81-8e05-c25c56d6f29a)
+
+Give any service name and click on create. (Make sure the security group has port 5000 added in the inbound rule)
+
+
 - Once service has been created we can see the task running. Go to networking from task tab and copy the Public IP and add :5000 in the end. And we can see our app running.
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/963d5834-6fe6-4e88-84e7-21cb4390b50e)
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/6a139aa0-7648-4336-a658-0019751b624b)
+
+Now if we copy the public IP and add port 5000 we can see like below;
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/294d544d-b290-4289-b41c-35f16d401e9c)
+
 
 # Step 6
 - Deployment
-Add new stage in pipeline called deployment and add the ECS cluster in that. 
+Add new stage in pipeline called deployment and add the ECS cluster in that. To do that go code pipeline we created and click on edit --> Add new stage after build and follow the below steps;
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/39793ca6-61de-475b-be7d-ba481cd71201)
+
+Once added the deploy stage click on done and save.
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/9560d6a2-f8a6-4ab5-8f6a-53de1fab93bb)
+
+Click on release change and after some time we can see the pipeline is successful.
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/fdfd8b14-f88e-4980-810f-448499a63162)
+
+- If you want to make any changes in the code  make the changes **app.py** and deploy it again using pipeline. If the deployment is successful we will see the changes.
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/26bff017-df4f-4ada-b27d-5bd7c0215d08)
+
+
+I have made some changes in the code and above you can see the changes succesfully completed,
+
+
+
+------------------------------------------------------------------------------------------------------------------
