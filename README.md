@@ -201,6 +201,38 @@ Add the below policy in the IAM role
 # Step 4
 - Create pipeline
 - Add new stage and connect the snyk account to check the vulnerabilities.
+- If you don’t have a Snyk account then click the link below and sign up.
+```
+https://snyk.io/
+```
+
+- Once the snyk account has been created we need to add the snyk stage in the code pipeline. To do that follow the below steps;
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/6600d16b-acdb-446c-8d88-d45974f50232)
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/75e0059a-c7d4-4ad5-96bf-84ff8df8ba3b)
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/9da95ff1-7312-4ceb-97a5-4081334f4865)
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/2e58b636-bfa8-4563-8247-a1d8d7d7d74c)
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/ab9b1a95-b327-4850-b4f6-bf306f8e57f2)
+
+
+- It will prompt to enter the username and password of Snyk account. Once you fill the details the SNyk will get connected to our code pipeline
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/f7d22ada-3409-4c45-b6be-401be2aaa8c1)
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/e350b4da-2585-4ca9-8ff3-6ccd93766314)
+
+
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/926981b3-6965-43a2-a627-5d65edf02b9b)
+
+Once you add the stage click on Save
+
+
+
+
 
 To create codepipeline follow the below steps;
  
