@@ -329,7 +329,8 @@ Click on release change and after some time we can see the pipeline is successfu
 ![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/26bff017-df4f-4ada-b27d-5bd7c0215d08)
 
 
-I have made some changes in the code and above you can see the changes succesfully completed,
+I have made some changes in the code and above you can see the changes succesfully completed. 
+### Thank You! :shipit:
 
 
 
