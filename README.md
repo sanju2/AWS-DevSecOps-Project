@@ -36,7 +36,7 @@ To create code commit repository follow the below steps;
 **Once the codecommit repository has been created we need to clone the project repository from github. To get the project repo click on the link below;**
 
 ```
-https://github.com/sanju2/AWS-DevSecOps-Project.git
+git clone https://github.com/sanju2/AWS-DevSecOps-Project.git
 ```
 
  **To clone the repository from github to codecommit we can use cloudshell from AWS**
