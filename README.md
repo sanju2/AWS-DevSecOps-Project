@@ -65,15 +65,8 @@ Go to Github and click on your profile --> settings
 
 Go back to cloudshell and clone using this token.
 
-- Next we need to mirror the repository we cloned. To mirror use the below commnad (if you are getting any error says name already exist the change the name or repository.)
 
-```
-git clone --mirror https://github.com/sanju2/AWS-DevSecOps-Project.git AWS-DevSecOps-Project
-```
-
-![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/6cad8bb5-a3d0-46f2-aea5-59f8fc5a7413)
-
-Now we have cloned and mirror the repository from github. Next we need to push the code to codecommit repository. Let's see how to do that;
+Now we have cloned the repository from github. Next we need to push the code to codecommit repository. Let's see how to do that;
 
 #### Push project repo to codecommit repository 
 
