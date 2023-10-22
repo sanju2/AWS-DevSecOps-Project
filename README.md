@@ -136,7 +136,8 @@ Go to codecommit console page and under codebuild click on build projects
 
 ![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/5e020e3b-3915-425a-8899-dfedef4bf68a)
 
-| AWS_DEFAULT_REGION  | Region (ex: us-east-1) |
+| AWS_DEFAULT_REGION  | Region (eg: us-east-1) |
+| --- | --- |
 | AWS_ACCOUNT_ID  | <AWS_A/C_ID>  |
 | IMAGE_TAG  | latest  |
 | IMAGE_REPO_NAME | ECR_repo_name |
