@@ -36,7 +36,7 @@ To create code commit repository follow the below steps;
 **Once the codecommit repository has been created we need to clone the project repository from github. To get the project repo click on the link below;**
 
 ```
-https://github.com/sanju2/AWS-DevSecOps-Project.git
+git clone https://github.com/sanju2/AWS-DevSecOps-Project.git
 ```
 
  **To clone the repository from github to codecommit we can use cloudshell from AWS**
@@ -65,15 +65,8 @@ Go to Github and click on your profile --> settings
 
 Go back to cloudshell and clone using this token.
 
-- Next we need to mirror the repository we cloned. To mirror use the below commnad (if you are getting any error says name already exist the change the name or repository.)
 
-```
-git clone --mirror https://github.com/sanju2/AWS-DevSecOps-Project.git AWS-DevSecOps-Project
-```
-
-![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/6cad8bb5-a3d0-46f2-aea5-59f8fc5a7413)
-
-Now we have cloned and mirror the repository from github. Next we need to push the code to codecommit repository. Let's see how to do that;
+Now we have cloned the repository from github. Next we need to push the code to codecommit repository. Let's see how to do that;
 
 #### Push project repo to codecommit repository 
 
@@ -143,7 +136,15 @@ Go to codecommit console page and under codebuild click on build projects
 
 ![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/5e020e3b-3915-425a-8899-dfedef4bf68a)
 
+| AWS_DEFAULT_REGION  | Region (eg: us-east-1) |
+| --- | --- |
+| AWS_ACCOUNT_ID  | <AWS_A/C_ID>  |
+| IMAGE_TAG  | latest  |
+| IMAGE_REPO_NAME | ECR_repo_name |
+
 ![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/9d000b25-2e80-4414-905a-00418a24ebae)
+
+
 
 - Once the codebuild has been created click on start build.
 
