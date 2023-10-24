@@ -297,7 +297,9 @@ Select the cluster we created
 
 ![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/791acf38-2f27-4c81-8e05-c25c56d6f29a)
 
-Give any service name and click on create. (Make sure the security group has port 5000 added in the inbound rule)
+![image](https://github.com/sanju2/AWS-DevSecOps-Project/assets/111639918/10ee8500-212d-48c6-bae2-55d84c57a1a2)
+
+Uncheck the circuit breaker and give any service name then click on create. (Make sure the security group has port 5000 added in the inbound rule)
 
 
 - Once service has been created we can see the task running. Go to networking from task tab and copy the Public IP and add :5000 in the end. And we can see our app running.
