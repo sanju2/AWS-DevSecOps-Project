@@ -333,6 +333,16 @@ Click on release change and after some time we can see the pipeline is successfu
 
 
 I have made some changes in the code and above you can see the changes succesfully completed. 
+
+# Clean Up
+
+- AWS ECS: Remove Service, Task Definition & Cluster.
+- AWS Dev Tools: Remove CodePipeline, CodeBuild, CodeDeploy & CodeCommit Repository.
+- AWS S3: Remove Artefact Bucket.
+- AWS IAM: Remove Service Role.
+- AWS ECR: Remove the repository.
+- AWS EC2 Security Group: Remove the SG.
+
 ### Thank You! :shipit:
 
 
